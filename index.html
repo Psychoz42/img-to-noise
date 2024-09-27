@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Noise Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        #outputCanvas {
+            margin-top: 20px;
+            max-width: 80%;  /* Установим максимальную ширину 80% экрана */
+            height: auto;
+        }
+        #downloadBtn {
+            display: none;  /* Кнопка будет скрыта до завершения конвертации */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Convert Image to Noise</h1>
+        <input type="file" id="imageInput" accept="image/*">
+        <br><br>
+        <button id="convertBtn">Convert image to Noise</button>
+        <br><br>
+        <canvas id="outputCanvas"></canvas>
+        <br><br>
+        <a id="downloadBtn" href="#" download="converted_image.png">
+            <button>Download Converted Image</button>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
