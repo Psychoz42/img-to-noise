@@ -3,35 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image to Noise Converter</title>
+    <title>Image Converter</title>
     <style>
+        /* Темная тема с темными оттенками серого */
         body {
             font-family: Arial, sans-serif;
             margin: 50px;
             text-align: center;
+            background-color: #1e1e1e;
+            color: #f0f0f0;
         }
+
+        button, select, input[type="file"] {
+            background-color: #333;
+            color: #f0f0f0;
+            border: 1px solid #555;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        button:hover, select:hover, input[type="file"]:hover {
+            background-color: #444;
+        }
+
         #outputCanvas {
+            display: none;
             margin-top: 20px;
-            max-width: 80%;  /* Установим максимальную ширину 80% экрана */
+            max-width: 80%;
             height: auto;
+            border: 1px solid #555;
+    
+            /* Центрирование canvas */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
+
         #downloadBtn {
-            display: none;  /* Кнопка будет скрыта до завершения конвертации */
+            display: none;
             margin-top: 20px;
         }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Convert Image to Noise</h1>
+        <h1>Конвертировать изображение</h1>
         <input type="file" id="imageInput" accept="image/*">
         <br><br>
-        <button id="convertBtn">Convert image to Noise</button>
+
+        <!-- Выпадающее меню для выбора алгоритма -->
+        <label for="algorithmSelect">Выберите алгоритм:</label>
+        <select id="algorithmSelect">
+            <option value="noise">Noise</option>
+            <option value="gray">Gray</option>
+            <option value="cursedGrayLight">Cursed gray light</option>
+            <option value="cursedGrayDark">Cursed gray dark</option>
+        </select>
         <br><br>
-        <canvas id="outputCanvas"></canvas>
+
+        <button id="convertBtn">Конвертировать изображение</button>
+        <br><br>
+        <canvas id="outputCanvas" style="display: none;"></canvas>
         <br><br>
         <a id="downloadBtn" href="#" download="converted_image.png">
-            <button>Download Converted Image</button>
+            <button>Скачать конвертированное изображение</button>
         </a>
     </div>
 
