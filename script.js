@@ -182,11 +182,7 @@ function convertToCurDarkGray(imgW, imgH, pixels) {
 function showDownloadButton(canvas) {
     const downloadBtn = document.getElementById("downloadBtn");
     const imageUrl = canvas.toDataURL("image/png");
-
-    // Показываем canvas после конвертации
-    canvas.style.display = 'block';
     
     downloadBtn.href = imageUrl;
     downloadBtn.style.display = 'inline-block';
-    //alert('Conversion finished and image is displayed!');
 }

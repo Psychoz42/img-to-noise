@@ -19,11 +19,10 @@ button:hover, select:hover, input[type="file"]:hover {
 }
 
 #outputCanvas {
-    display: none;
+    display: block;
     margin-top: 20px;
     max-width: 80%;
     height: auto;
-    border: 1px solid #555;
 
     /* Центрирование canvas */
     display: block;
